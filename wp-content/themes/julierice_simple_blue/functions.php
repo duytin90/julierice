@@ -116,6 +116,8 @@ add_action( 'widgets_init', 'julierice_simple_blue_widgets_init' );
 function julierice_simple_blue_scripts() {
 	wp_enqueue_style( 'julierice_simple_blue-style', get_stylesheet_uri() );
 
+	// wp_enqueue_style( 'julierice_simple_blue-skeleton', get_template_directory_uri() . '/skeleton.css' );
+
 	wp_enqueue_script( 'julierice_simple_blue-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'julierice_simple_blue-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );

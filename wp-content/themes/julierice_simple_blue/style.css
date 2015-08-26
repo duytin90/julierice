@@ -42,6 +42,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Common classes
+# Components
+## Header
+# Page specific
+## Home page
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -524,8 +529,8 @@ a:active {
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
-	width: 100%;
+	/*float: left;*/
+	/*width: 100%;*/
 }
 
 .main-navigation ul {
@@ -538,6 +543,12 @@ a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
+	width: 15%;
+	margin-right: 2%;
+}
+
+.main-navigation li:last-child {
+	margin-right: 0;
 }
 
 .main-navigation a {
@@ -888,3 +899,46 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/*--------------------------------------------------------------
+# Common classes
+--------------------------------------------------------------*/
+
+.nine-sixty {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.blue-background {
+	background-color: rgba(220,232,238,1);
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+#masthead .site-branding .logo {
+	float: left;
+	width: 50%;
+}
+
+#masthead .site-branding .logo img{
+	max-width: 300px;
+}
+
+#masthead .site-branding .site-title,
+#masthead .site-branding .site-description {
+	float: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Page specific
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Home page
+--------------------------------------------------------------*/
+.home.page
