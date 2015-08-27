@@ -13,9 +13,13 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer blue-background" role="contentinfo">
 		<div class="site-info">
-
+			<p >
+				© 2015 Julie Rice <br/>
+				juliericelc@gmail.com <br/>
+				515-710-9486
+			</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

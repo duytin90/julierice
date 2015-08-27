@@ -37,23 +37,55 @@ get_header(); ?>
 	<?php endwhile; // End of the loop.?>
 
 	</main><!-- #main -->
+
 	<div id="upcoming-events">
 	<?php
-		$args = array( 'posts_per_page' => 5,'post_type' => 'tribe_events');
+		//https://theeventscalendar.com/knowledgebase/custom-event-list-pagination/
 
-		$myposts = get_posts( $args );
+		// Build our query, adopt the default number of events to show per page
+		$upcoming = new WP_Query( array(
+			'post_type' => Tribe__Events__Main::POSTTYPE,
+			'paged'     => 1,
+			'posts_per_page' => 3
+		) );
 
+		// If we got some results, let's list 'em
+		while ( $upcoming->have_posts() ) {
+
+			$upcoming->the_post();
+
+			// this is copied from events calendar plugin /src/views/list/loop.php
+	 		do_action( 'tribe_events_inside_before_loop' ); ?>
+
+			<!-- Month / Year Headers -->
+			<?php tribe_events_list_the_date_headers(); ?>
+
+			<!-- Event  -->
+			<?php
+			$post_parent = '';
+			if ( $post->post_parent ) {
+				$post_parent = ' data-parent-post-id="' . absint( $post->post_parent ) . '"';
+			}
+			?>
+			<div id="post-<?php the_ID() ?>" class="<?php tribe_events_event_classes() ?>" <?php echo $post_parent; ?>>
+				<?php tribe_get_template_part( 'list/single', 'event' ) ?>
+			</div><!-- .hentry .vevent -->
+
+			<?php do_action( 'tribe_events_inside_after_loop' );
+		}
+
+			// Clean up
+			wp_reset_query();
+	?>
 	</div> <!-- #upcoming-events -->
 
 	<div id="blog">
 	<?php
-		$args = array( 'posts_per_page' => 5,  'category' => 1 );
+		$args = array( 'posts_per_page' => 2,  'category' => 1 );
 
 		$myposts = get_posts( $args );
 		foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-			<li>
-				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			</li>
+			<?php get_template_part( 'template-parts/post', 'excerpt' ); ?>
 		<?php endforeach;
 		wp_reset_postdata();
 	?>

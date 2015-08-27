@@ -45,6 +45,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Common classes
 # Components
 ## Header
+## Footer
 # Page specific
 ## Home page
 --------------------------------------------------------------*/
@@ -279,7 +280,7 @@ textarea {
 	color: #404040;
 	font-family: sans-serif;
 	font-size: 16px;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	line-height: 1.5;
 }
 
@@ -289,11 +290,13 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: Lato;
 	clear: both;
 }
 
 p {
 	margin-bottom: 1.5em;
+	font-family: Vollkorn;
 }
 
 dfn,
@@ -346,6 +349,10 @@ ins {
 
 big {
 	font-size: 125%;
+}
+
+span {
+	font-family: Vollkorn;
 }
 
 /*--------------------------------------------------------------
@@ -501,17 +508,18 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: rgba(165,190,61,1);
+	text-decoration: none;
 }
 
 a:visited {
-	color: purple;
+	color: rgba(165,190,61,1);
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: rgba(236,187,189,1);
 }
 
 a:focus {
@@ -542,9 +550,8 @@ a:active {
 
 .main-navigation li {
 	float: left;
+	margin-right: 6%;
 	position: relative;
-	width: 15%;
-	margin-right: 2%;
 }
 
 .main-navigation li:last-child {
@@ -553,7 +560,10 @@ a:active {
 
 .main-navigation a {
 	display: block;
+	font-size: 1.4rem;
+	font-weight: 700;
 	text-decoration: none;
+	text-transform: uppercase;
 }
 
 .main-navigation ul ul {
@@ -603,6 +613,7 @@ a:active {
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a {
+	color: rgba(236,187,189,1);
 }
 
 /* Small menu. */
@@ -768,7 +779,7 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 0.5em 0 0;
 }
 
 .page-links {
@@ -932,7 +943,39 @@ object {
 #masthead .site-branding .site-title,
 #masthead .site-branding .site-description {
 	float: right;
-	width: 50%;
+	text-align: right;
+	width: 40%;
+}
+
+#masthead .site-branding .site-title {
+	margin-top: 1rem;
+}
+
+#masthead .site-branding .site-title a{
+	font-family: Lato;
+	font-size: 2.5rem;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#masthead .site-branding .site-description {
+	color: rgba(165,190,61,1);
+	font-size: 1.1rem;
+	font-style: italic;
+}
+
+#masthead #site-navigation #primary-menu li a {
+
+
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+	text-align: center;
+	color: rgba(165,190,61,1);
 }
 
 /*--------------------------------------------------------------
